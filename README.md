@@ -11,7 +11,7 @@ Infoga is a tool for gathering e-mail accounts information from different public
 ```
 apk add git
 apk add bash 
-git clone https://github.com/The404Hacking/Infoga.git
+git clone https://github.com/cons0le7/Infoga-iSH
 cd Infoga-iSH
 chmod +x install.sh
 ./install.sh
