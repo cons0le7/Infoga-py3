@@ -2,7 +2,7 @@
 # Infoga - Email Information Gathering
 Infoga is a tool for gathering e-mail accounts information from different public sources (search engines, pgp key servers). Is a really simple tool, but very effective for the early stages of a penetration test or just to know the visibility of your company in the Internet. 
 
-***This fork had been created to modify tool for compatibility with iSH Shell on iOS devices***
+***This fork is the same as the original tool, modified for compatibility with iSH Shell on iOS devices***
 
 ## Screenshot
 ![Screenshot](Screenshot.png?raw=ture "Screenshot")
