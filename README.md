@@ -1,19 +1,24 @@
 ![python](https://img.shields.io/badge/python-2.7-brightgreen.svg) ![license](https://img.shields.io/badge/license-GPL-brightgreen.svg)
 # Infoga - Email Information Gathering
-Infoga is a tool for gathering e-mail accounts information from different public sources (search engines, pgp key servers). Is a really simple tool, but very effective for the early stages of a penetration test or just to know the visibility of your company in the Internet.
+Infoga is a tool for gathering e-mail accounts information from different public sources (search engines, pgp key servers). Is a really simple tool, but very effective for the early stages of a penetration test or just to know the visibility of your company in the Internet. 
+
+***This fork had been created to modify tool for compatibility with iSH Shell on iOS devices***
 
 ## Screenshot
 ![Screenshot](Screenshot.png?raw=ture "Screenshot")
 
 ## Installation
 ```
+apk add git
+apk add bash 
 git clone https://github.com/The404Hacking/Infoga.git
-cd Infoga
-pip install -r requirements.txt
-python infoga.py
+cd Infoga-iSH
+chmod +x install.sh
+./install.sh
+python2 infoga.py
 ```
 ## Usage
-`python infoga.py --target nsa.gov --source all`
+`python2 infoga.py --target nsa.gov --source all`
 
 ![Screenshot-1](Screenshot-1.png?raw=ture "Screenshot-1")
 
