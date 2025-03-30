@@ -28,11 +28,11 @@ chmod +x install-iSH.sh
 python3 infoga.py
 ```
 ## Usage
-`python2 infoga.py --target nsa.gov --source all`
+`python3 infoga.py --target nsa.gov --source all`
 
 ![Screenshot-1](Screenshot-1.png?raw=ture "Screenshot-1")
 
-`python infoga.py --info rthosfe@nsa.gov`
+`python3 infoga.py --info rthosfe@nsa.gov`
 
 ![Screenshot-2](Screenshot-2.png?raw=ture "Screenshot-2")
 
