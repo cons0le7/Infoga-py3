@@ -19,35 +19,34 @@
 # along with Infoga; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 import re
-import string
 
 class parser:
 
-	def __init__(self,results,target):
-		self.results = results
-		self.target = target 
+    def __init__(self, results, target):
+        self.results = results
+        self.target = target 
 
-	def clean(self):
-		self.results = re.sub("<em>", "", self.results)
-		self.results = re.sub("<b>", "", self.results)
-		self.results = re.sub("</b>", "", self.results)
-		self.results = re.sub("</em>", "", self.results)
-		self.results = re.sub("%2f", " ", self.results)
-		self.results = re.sub("%3a", " ", self.results)
-		self.results = re.sub("<strong>", "", self.results)
-		self.results = re.sub("</strong>", "", self.results)
-		self.results = re.sub("<wbr>", "", self.results)
-		self.results = re.sub("</wbr>", "", self.results)
-		
-		for x in ('>', ':', '=', '<', '/', '\\', ';', '&', '%3A', '%3D', '%3C'):
-			self.results = string.replace(self.results, x, " ")
+    def clean(self):
+        self.results = re.sub("<em>", "", self.results)
+        self.results = re.sub("<b>", "", self.results)
+        self.results = re.sub("</b>", "", self.results)
+        self.results = re.sub("</em>", "", self.results)
+        self.results = re.sub("%2f", " ", self.results)
+        self.results = re.sub("%3a", " ", self.results)
+        self.results = re.sub("<strong>", "", self.results)
+        self.results = re.sub("</strong>", "", self.results)
+        self.results = re.sub("<wbr>", "", self.results)
+        self.results = re.sub("</wbr>", "", self.results)
+        
+        for x in ('>', ':', '=', '<', '/', '\\', ';', '&', '%3A', '%3D', '%3C'):
+            self.results = self.results.replace(x, " ") 
 
-	def email(self):
-		self.clean()
-		regex = re.compile('[a-zA-Z0-9.\-_+#~!$&\',;=:]+'+'@'+'[a-zA-Z0-9.-]*'+self.target)
-		temp = regex.findall(self.results)
-		emails = []
-		for x in temp:
-			if x not in emails:
-				emails.append(x)
-		return emails
+    def email(self):
+        self.clean()
+        regex = re.compile('[a-zA-Z0-9.\-_+#~!$&\',;=:]+' + '@' + '[a-zA-Z0-9.-]*' + self.target)
+        temp = regex.findall(self.results)
+        emails = []
+        for x in temp:
+            if x not in emails:
+                emails.append(x)
+        return emails
