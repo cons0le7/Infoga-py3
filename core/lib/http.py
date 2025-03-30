@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # Infoga: Email Information Gathering
@@ -19,37 +19,40 @@
 # along with Infoga; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import httplib
+import http.client
 import requests
-import urllib2
+import urllib.request
 
 class http:
-	user_agent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1"
-	def httplib(self,server,query,cookie=None):
-		try:
-			con = httplib.HTTP(server)
-			con.putrequest('GET',query)
-			con.putheader("Host",server)
-			if cookie != None:
-				con.putheader("Cookie",cookie)
-			con.putheader("User-agent",self.user_agent)
-			con.endheaders()
+    user_agent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1"
+    
+    def httplib(self, server, query, cookie=None):
+        try:
+            con = http.client.HTTPConnection(server)
+            con.request('GET', query, headers={
+                "Host": server,
+                "User-agent": self.user_agent,
+                "Cookie": cookie
+            } if cookie else {
+                "Host": server,
+                "User-agent": self.user_agent
+            })
 
-			returncode,returnmsg,headrs = con.getreply()
-			return con.getfile().read()
-		except Exception as error:
-			return error
+            response = con.getresponse()
+            return response.read()
+        except Exception as error:
+            return error
 
-	def request(self,url):
-		try:
-			req = requests.get(url)
-			return req.content
-		except Exception as error:
-			return error
+    def request(self, url):
+        try:
+            req = requests.get(url)
+            return req.content
+        except Exception as error:
+            return error
 
-	def urllib(self,url,payload,headers={"User-agent":user_agent}):
-		try:
-			con = urllib2.Request(url,payload,headers)
-			return urllib2.urlopen(con).read()
-		except Exception as error:
-			return error
+    def urllib(self, url, payload, headers={"User-agent": user_agent}):
+        try:
+            con = urllib.request.Request(url, payload.encode('utf-8'), headers)
+            return urllib.request.urlopen(con).read()
+        except Exception as error:
+            return error
