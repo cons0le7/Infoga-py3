@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # Infoga: Email Information Gathering
@@ -38,11 +38,11 @@ class netcraft:
 				sites = re.findall('url=\S+"',resp,re.I)
 				if sites:
 					self.printf.plus("Found %s sites"%(len(sites)))
-					print ""
+					print("")
 					for x in range(len(sites)):
 						host = sites[x].split('"')[0]
-						print " - %s"%(host.split("url=")[1])
-					print ""
+						print(" - %s"%(host.split("url=")[1]))
+					print("")
 				else:
 					self.printf.error("Not found hostnames")
 		except Exception as error:
