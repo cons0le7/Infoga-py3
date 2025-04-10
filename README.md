@@ -1,3 +1,4 @@
+![Python](https://img.shields.io/pypi/pyversions/sinabs?logo=python)
 ![license](https://img.shields.io/badge/license-GPL-brightgreen.svg)
 # Infoga - Email Information Gathering
 Infoga is a tool for gathering e-mail accounts information from different public sources (search engines, pgp key servers). Is a really simple tool, but very effective for the early stages of a penetration test or just to know the visibility of your company in the Internet. 
