@@ -37,12 +37,6 @@ python3 infoga.py
 
 ![Screenshot-2](Screenshot-2.png?raw=ture "Screenshot-2")
 
-
-## Download and Clone
-> Download: Click [Here](https://github.com/The404Hacking/Infoga/archive/master.zip) (Infoga-master.zip)
-
-> Clone: git clone [https://github.com/The404Hacking/Infoga.git](https://github.com/The404Hacking/Infoga.git)
-
 ## The404Hacking | Digital Security ReSearch Group
 [The404Hacking](https://T.me/The404Hacking)
 
